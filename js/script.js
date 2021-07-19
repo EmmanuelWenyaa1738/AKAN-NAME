@@ -4,24 +4,23 @@ const arrayakanfemale = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Am
 
 function getDate() {
 
-    let dateInput = document.getElementById("DOB").value;
-    console.log(dateInput);
+    let dateOutput = document.getElementById("DOB").value;
+    console.log(dateOutput);
 
     let male = document.getElementById("male");
 
     let female = document.getElementById("female");
-    // const dateArray = dateInput.split("-")
-    // console.log(dateArray)
 
-     if (dateInput == "") {
+
+    if (dateOutput == "") {
         alert("PLEASE ENTER A VALID DATE")
 
-     } else if (male.checked == false && female.checked == false) {
+    } else if (male.checked == false && female.checked == false) {
         alert("PLEASE SELECT A GENDER")
 
-    }// Parsing the date
+    }
 
-    date = new Date(dateInput);
+    date = new Date(dateOutput);
     console.log(date);
 
 
@@ -44,7 +43,7 @@ function getDate() {
     console.log(DD);
 
 
-    d= date.getDay();
+    d = date.getDay();
     let dd = Math.round(
         (((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7
     );
@@ -56,7 +55,7 @@ function validateForm() {
     getDate();
     if (male.checked) {
         console.log(arrayakanmale[d]);
-        document.getElementById("DISPLAY").innerHTML = `Your Akan Name is ` + `<span>` + arrayakanmale[d] + `</span>` + "IT MEANS YOU WERE  BORN ON" + date.toLocaleString('en-us', { weekday: 'long' });
+        document.getElementById("DISPLAY").innerHTML = `Your Akan Name is ` + `<span>` + arrayakanmale[d] + `</span>` + '<br>' + "IT MEANS YOU WERE  BORN ON " + date.toLocaleString('en-us', { weekday: 'long' });
     }
     else if (female.checked) {
         console.log(arrayakanfemale[d]);
