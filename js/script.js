@@ -1,34 +1,71 @@
-function onSubmit() {
-    console.log("success!");
+const arrayakanmale = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 
-    let Day = parseInt(document.getElementById("Day").value);
-    let Month = parseInt(document.getElementById("Month").value);
-    let Year =parseInt(document.getElementById("Year").value)
+const arrayakanfemale = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
-    let akanname = calculateAkanname(Day)
+function getDate() {
+
+    let dateInput = document.getElementById("DOB").value;
+    console.log(dateInput);
+
+    let male = document.getElementById("male");
+
+    let female = document.getElementById("female");
+    // const dateArray = dateInput.split("-")
+    // console.log(dateArray)
+
+     if (dateInput == "") {
+        alert("PLEASE ENTER A VALID DATE")
+
+     } else if (male.checked == false && female.checked == false) {
+        alert("PLEASE SELECT A GENDER")
+
+    }// Parsing the date
+
+    date = new Date(dateInput);
+    console.log(date);
+
+
+
+    CC = date.getFullYear();
+    CC = CC.toString().substr(0, 2);
+    console.log(CC);
+
+
+    YY = date.getFullYear();
+    YY = YY.toString().substr(2, 4);
+    console.log(YY);
+
+
+    MM = date.getMonth();
+    console.log(MM);
+
+
+    DD = date.getDate();
+    console.log(DD);
+
+
+    d= date.getDay();
+    let dd = Math.round(
+        (((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7
+    );
+    console.log(d);
+
+    return d;
+}
+function validateForm() {
+    getDate();
+    if (male.checked) {
+        console.log(arrayakanmale[d]);
+        document.getElementById("DISPLAY").innerHTML = `Your Akan Name is ` + `<span>` + arrayakanmale[d] + `</span>` + "IT MEANS YOU WERE  BORN ON" + date.toLocaleString('en-us', { weekday: 'long' });
+    }
+    else if (female.checked) {
+        console.log(arrayakanfemale[d]);
+        document.getElementById("DISPLAY").innerHTML = `Your Akan Name is ` + `<span>` + arrayakanfemale[d] + `</span>` + `<br>` + `IT MEANS YOU WERE BORN ON ` + date.toLocaleString('en-us', { weekday: 'long' });
+    }
 }
 
-let weekArray = ["Sunday", "Kwasi", "Kwadwo", "Kwabena","Kwaku", "Yaw", "Kofi" ,"Kwame"]
 
- Kwadwo
+function onSubmit() {
+    validateForm();
 
-
-
-function calculatAkanname(Day) {
-    let akanname = ;
-    console.log("BMI: " + bmi)
-    if (bmi >= 30) {
-        document.getElementById("output").innerHTML = "You are obese, consider taking a workout routine";
-    }
-    else if (bmi >= 25) {
-        document.getElementById("output").innerHTML = "You are overweight, consider taking a workout routine";
-    }
-    else if (bmi >= 18.5) {
-        document.getElementById("output").innerHTML = "You have a healthy BMI";
-    }
-    else {
-        document.getElementById("output").innerHTML = "You underweight. Get on a healthy eating programme";
-    }
-
-    return bmi;
 }

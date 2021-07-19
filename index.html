@@ -36,23 +36,27 @@
         <form>FILL IN YOUR DETAILS
 
             <div class="form-group">
-                <label for="Day">Day</label>
-                <input type="number" class="form-control" placeholder="Enter Day" id="Day">
-            </div>
-            <div class="form-group">
-                <label for="Month">Month:</label>
-
-                <input type="number" class="form-control" placeholder="Enter Month" id="Month">
-
-            </div>
-            <div class="form-group">
-                <label for="Year">Year</label>
-                <input type="number" class="form-control" placeholder="Enter Year" id="Year">
+                <label for="DATE OF BIRTH">DATE OF BIRTH</label>
+                <input type="date" class="" placeholder="date" id="DOB">
             </div>
 
-            <button type="button" class="btn btn-primary" onclick="onSubmit()">Submit</button>
+            <p class="content-heading">Select your Gender</p>
+            <div class="gender-select">
+                <div>
+                    <label><input type="radio" name="gender" id="male" value="Male">Male</label>
+                </div>
+
+                <div>
+                    <label><input type="radio" name="gender" id="female" value="Female">Female</label>
+                </div>
+            </div>
+
+
+            <button type="button" class="btn btn-primary" onclick="onSubmit()">GET NAME </button>
         </form>
-        <p id="output"></p>
+
+        <p id="DISPLAY"></p>
+
     </div>
 
 
