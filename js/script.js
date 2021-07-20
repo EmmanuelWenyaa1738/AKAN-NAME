@@ -1,6 +1,6 @@
-const arrayakanmale = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+const akanmale = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 
-const arrayakanfemale = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+const akanfemale = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
 function getDate() {
 
@@ -43,23 +43,23 @@ function getDate() {
     console.log(DD);
 
 
-    d = date.getDay();
+    y = date.getDay();
     let dd = Math.round(
         (((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7
     );
-    console.log(d);
+    console.log(y);
 
-    return d;
+    return y;
 }
 function validateForm() {
     getDate();
     if (male.checked) {
-        console.log(arrayakanmale[d]);
-        document.getElementById("DISPLAY").innerHTML = `Your Akan Name is ` + `<span>` + arrayakanmale[d] + `</span>` + '<br>' + "IT MEANS YOU WERE  BORN ON " + date.toLocaleString('en-us', { weekday: 'long' });
+        console.log(akanmale[y]);
+        document.getElementById("DISPLAY").innerHTML = "Your Akan Name is " + "<span>" + akanmale[y] + "</span>" + "<br>" + "IT MEANS YOU WERE  BORN ON a " + date.toLocaleString('en-us', { weekday: 'long' });
     }
     else if (female.checked) {
-        console.log(arrayakanfemale[d]);
-        document.getElementById("DISPLAY").innerHTML = `Your Akan Name is ` + `<span>` + arrayakanfemale[d] + `</span>` + `<br>` + `IT MEANS YOU WERE BORN ON ` + date.toLocaleString('en-us', { weekday: 'long' });
+        console.log(akanfemale[y]);
+        document.getElementById("DISPLAY").innerHTML = "Your Akan Name is " + "<span>" + akanfemale[y] + "</span>" + "<br>" + "IT MEANS YOU WERE BORN ON a " + date.toLocaleString('en-us', { weekday: 'long' });
     }
 }
 
